@@ -50,7 +50,6 @@ def ReverseComplement(Text):
     return text
 
 
-
 def PatternMatching(Genome,Pattern):
     positions = []
 
@@ -66,7 +65,6 @@ def SymbolArray(Genome,symbol):
     for i in range(n):
         array[i] = PatternCount(ExtendedGenome[i: i+(n//2)], symbol)
     return array
-
 
 
 def SkewArray(Genome):
