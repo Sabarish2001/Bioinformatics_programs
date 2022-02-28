@@ -1,7 +1,9 @@
+# Function that will return the length of the given sequence
 def sequence_length(sequence):
     check_length = len(sequence)
     return check_length
 
+#Function that will count the number of nucleotides in a given sequnece and return the counts
     
 def count_bases(sequences):
     base_dict = {}
@@ -11,10 +13,11 @@ def count_bases(sequences):
     for letter in sequences:
         base_dict[letter] += 1
     return base_dict
-        
-
+            
 res = count_bases("ATGCATTTGGGGCCCAA")
 print(res)
+
+#Function that validates wether the given sequence is DNA sequence or not
 
 def validate_nucleotides(sequence):
     nucleotides = ["A","T","G","C"]
@@ -27,6 +30,8 @@ def validate_nucleotides(sequence):
 res = validate_nucleotides("ATGC")
 print(res)
 
+#Function that will mimic the replication process in DNA (i.e returns its complementary bases)
+
 def repliacte(sequence):
     complementary_bases = {"A":"T","G":"C","C":"G","T":"A"}
     repliacted = ""
@@ -36,6 +41,8 @@ def repliacte(sequence):
 
 res = repliacte("ATGCATGC")
 print(res)
+
+#Function that will transcribe DNA -> mRNA
 
 def transcribe(sequence):
     complementary_base_pairs = {"A":"U","T":"A","G":"C","C":"G"}
@@ -47,6 +54,8 @@ def transcribe(sequence):
 #   return liste
 res1 = transcribe("ATGC")
 print(res1)
+
+#Function that will return the number of matches and mismatches in a given sequence of equal sizes
 
 def match_mismatch(sequence_1,sequence_2):
     
@@ -67,15 +76,20 @@ x = match_mismatch(sequence_1="ATGCATGC",sequence_2="TTGCGTGC")
 print("Matches = %s , Mismatches = %s" %(x))
 
 
+#Function that will give you the AT composition in the given sequence
+
 def AT_composition(sequence):
     count_AT = (((sequence.count('A') + sequence.count('T')) / len(sequence)) * 100)
     return count_AT
 
-    
+#Function that will give you the GC compositon in the given sequence
+
+
 def GC_composition(sequence):
     count_GC = (((sequence.count('G') + sequence.count('C')) / len(sequence)) * 100)
     return count_GC
 
+#Function that will return you the number of times AT pairs occurs in a given sequence
 
 def AT_pairs(sequence,pattern = "AT"):
     
@@ -92,6 +106,8 @@ def AT_pairs(sequence,pattern = "AT"):
 #            occurences.append(i)
 #    return occurences
 
+
+#Function that will give you the number of times GC pairs occurs in a given sequence
 
 def GC_pairs(sequence,pattern="GC"):
     seq_len = len(sequence)
