@@ -1,3 +1,5 @@
+#Program to translate mRNA -> Protein
+
 codon_table = {"UUU": "F","UUC":"F","UUA":"L","UUG":"L",
                "CUU":"L","CUC":"L","CUA":"L","CUG":"L",
                "AUU":"I","AUC":"I","AUA":"I","AUG":"M",
