@@ -1,0 +1,3 @@
+# Bioinfo_programs
+
+Bioinfo_programs contains programs to analyse DNA , RNA and proteins, analysis ranges from basic to complex.And more to be added......
