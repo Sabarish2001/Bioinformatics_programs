@@ -28,3 +28,25 @@ def translate(sequence,codon=3):
         else:
             break
     return protein
+
+  
+  def check_start_codon(sequence,start_codon="AUG"):
+    sequence_len = len(sequence)
+    len_start_codon = len(start_codon)
+    
+    for i in range(0,sequence_len):
+        if sequence[i: i + len_start_codon] == start_codon:
+            return "Start Codon present at position: {0}".format(i)
+    return False
+  
+  
+  
+  def check_stop_codon(sequence,stop_codon="UAG"):
+    sequence_len = len(sequence)
+    len_stop_codon = len(stop_codon)
+    
+    for i in range(0,sequence_len):
+        if sequence[i:i + len_stop_codon] == stop_codon:
+            return "Stop codon present at position : {}".format(i)
+        else:
+            False
