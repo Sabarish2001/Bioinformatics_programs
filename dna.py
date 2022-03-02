@@ -119,6 +119,20 @@ def GC_pairs(sequence,pattern="GC"):
             gc_occurences.append(i)
     return gc_occurences
 
+#Function Count will count the number of times a k-mer pattern appears as a substring of text
+
+def count(text,pattern):
+    text_len = len(text)
+    pattern_len = len(pattern)
+    count = 0
+    for i in range(text_len - pattern_len + 1):
+        if text[i:i + pattern_len] == pattern:
+            count = count + 1
+    return count
+
+res = count("","")
+print(res)
+
 
 
 
