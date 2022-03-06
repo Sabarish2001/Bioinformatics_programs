@@ -134,6 +134,33 @@ res = count("","")
 print(res)
 
 
+def validate_protein(protein):
+    start_codon = "M"
+    stop_codons = "Stop"
+    
+    if protein.startswith("M") and protein.endswith("Stop"):
+        return protein
+    else:
+        return "Start codon error: {0}\n\t Stop codon error: {1}".format(start_codon,stop_codons)
+
+def reading_frame(sequence,ORF,codon=3):
+    sequence_len = len(sequence)
+    protein = ""
+    
+    for i in range(ORF,sequence_len - codon + 1, codon):
+        if sequence[i : i + codon] in codons:
+            triplet = sequence[i : i + codon]
+            protein += codons[triplet]
+        else:
+            break
+    return validate_protein(protein)
+
+res0 = reading_frame(sequence="AUGCGAUGA",ORF=0)
+print("For ORF = 0 : %s" %(res0))
+res1 = reading_frame(sequence="CGAGCCUAA",ORF=1)
+print("For ORF = 1 : %s" %(res1))
+res2 = reading_frame(sequence="CGAGCCUAG",ORF=2)
+print("For ORF = 2 : %s" %(res2))
 
 
 
