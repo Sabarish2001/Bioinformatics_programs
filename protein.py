@@ -18,10 +18,10 @@ codon_table = {"UUU": "F","UUC":"F","UUA":"L","UUG":"L",
                "GGU":"G","GGC":"G","GGA":"G","GGG":"G"}
 
 
-def translate(sequence,codon=3):
-    seq_len = len(sequence)
-    protein = ""
-    for i in range(0,(seq_len-3),codon):
+def translate(sequence,codon=3):                             #Function translate will take 2 parametere Sequence and codon. Codon by default is set to 3 because we are going to read codons (i.e in triplets) 
+    seq_len = len(sequence)                                  #seq_len contains the length of the sequence
+    protein = ""                                             #Initializing protein variable to an empty string
+    for i in range(0,(seq_len-3),codon):                     #
         if sequence[i: i + codon] in codon_table:
             triplet = sequence[i:i + codon]
             protein += codon_table[triplet]            
