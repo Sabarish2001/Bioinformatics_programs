@@ -162,5 +162,26 @@ print("For ORF = 1 : %s" %(res1))
 res2 = reading_frame(sequence="CGAGCCUAG",ORF=2)
 print("For ORF = 2 : %s" %(res2))
 
+def count_gaps(seq1,seq2):
+    
+    len_seq1 = len(seq1)
+    len_seq2 = len(seq2)
+    gaps = " "
+    seq1_total_gaps = 0
+    seq2_total_gaps = 0
+    for i in range(len_seq1):
+        if seq1[i] == gaps:
+            seq1_total_gaps += 1
+
+    for j in range(len_seq2):
+        if seq2[j] == gaps:
+            seq2_total_gaps +=1
+
+
+    return seq1_total_gaps,seq2_total_gaps
+
+gap1,gap2 = count_gaps("ATGCATGC","ACG TAG ATGC")
+print("Gaps in seq1 = %d" %gap1,"\n" "Gaps in seq2 = %d" %gap2)
+
 
 
