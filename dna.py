@@ -184,4 +184,28 @@ gap1,gap2 = count_gaps("ATGCATGC","ACG TAG ATGC")
 print("Gaps in seq1 = %d" %gap1,"\n" "Gaps in seq2 = %d" %gap2)
 
 
+def common_substring(seq1,k_mer):
+    seq1_len = len(seq1)
+    possible_kmer_patterns = {}
+    pattern_occurences = []
+    
+    for i in range(0,seq1_len-k_mer + 1):
+        patterns = seq1[i : i + k_mer]
+        if not patterns in possible_kmer_patterns:
+            possible_kmer_patterns[patterns] = 0
+        possible_kmer_patterns[patterns] += 1
+    return possible_kmer_patterns
+    
+def count_common_pattern(res):
+    biggest = 0
+    for key,values in res.items():
+        if values > biggest:
+            biggest = values
+            current_key = key
+    return biggest,current_key
+
+num,pat = count_common_pattern(common_substring("ATGCTGTGATGC",1))
+print("Common substring is: %s" %(pat), "and number of times it occurs is: %d"%(num))
+
+
 
