@@ -1,3 +1,15 @@
+def count_AA_frequency(aa_sequence):
+    single_letter_AA = {}
+    
+    for each_AA in aa_sequence:
+        single_letter_AA[each_AA] = 0
+        
+    for every_AA in aa_sequence:
+        single_letter_AA[every_AA] += 1
+        
+    return single_letter_AA
+    
+
 #Program to translate mRNA -> Protein
 
 codon_table = {"UUU": "F","UUC":"F","UUA":"L","UUG":"L",
