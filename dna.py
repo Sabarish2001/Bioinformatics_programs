@@ -208,4 +208,24 @@ num,pat = count_common_pattern(common_substring("ATGCTGTGATGC",1))
 print("Common substring is: %s" %(pat), "and number of times it occurs is: %d"%(num))
 
 
+def mapping_patterns(pattern,text):
+    text_len = len(text)
+    patt_len = len(pattern)
+    
+    patt_occs = []
+    for i in range(0, text_len - patt_len + 1):
+        if text[i : i + patt_len] == pattern:
+            patt_occs.append(i)
+    return patt_occs
+
+my_text = input("Enter the text")
+patterns = int(input("How many patterns do you want to match with the text:"))
+
+pattern_list = []
+for i in range(0,patterns):
+    pattern_list.append(input("Enter the pattern:"))
+    for j in range(0,len(pattern_list)):
+        res = mapping_patterns(pattern_list[j],my_text)
+    print(res)
+
 
