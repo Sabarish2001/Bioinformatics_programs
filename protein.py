@@ -62,3 +62,21 @@ def translate(sequence,codon=3):                             #Function translate
             return "Stop codon present at position : {}".format(i)
         else:
             False
+            
+#Program to return reverse translation of amino acid sequence
+"""
+This program will return you all the possible codons that codes for a single amino acid sequence.
+Getting the exact codon which coded for a specific amino acid is difficult because of redundacy in genetic code."""
+            
+def convert_aa_to_mRNA(amino_sequence):
+    
+    aa_seq_len = len(amino_sequence)
+    mRNA_seq = []
+    for each_aa in range(0 , aa_seq_len):
+        for codon,single_letter_aa in codon_table.items():
+            if amino_sequence[each_aa] == single_letter_aa:
+                mRNA_seq.append(codon)
+    return mRNA_seq
+
+res = convert_aa_to_mRNA("MVHTP")
+print("".join(res))
