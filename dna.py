@@ -227,5 +227,20 @@ for i in range(0,patterns):
     for j in range(0,len(pattern_list)):
         res = mapping_patterns(pattern_list[j],my_text)
     print(res)
+    
+
+#count_codons will count the number of codons present in a given sequence
+
+def count_codons(sequence, codon=3):
+    seq_len = len(sequence)
+
+    count = 0
+    for each_triplet in range(0, seq_len,codon):
+        if sequence[each_triplet : each_triplet + codon]:
+            count += 1
+    return count
+
+res = count_codons("ATTATGCCGGCCACC")
+print(res)
 
 
