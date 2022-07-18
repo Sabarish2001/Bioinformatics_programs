@@ -244,3 +244,17 @@ res = count_codons("ATTATGCCGGCCACC")
 print(res)
 
 
+
+def count_CpG(sequence,pattern='CG'):
+    seq_len = len(sequence)
+    pat_len = len(pattern)
+    
+    count = 0
+    for i in range(0, seq_len - pat_len):
+        if sequence[i : i + pat_len] == pattern:
+            count += 1
+    return count
+
+res = count_CpG("ATTGCGCGCGGGCGATTACGGCG")
+print("Number of CpGs present in the sequence is : %d" %res)
+
