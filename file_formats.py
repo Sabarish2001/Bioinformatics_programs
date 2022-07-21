@@ -8,7 +8,7 @@ with open("sequence.fasta","r") as f:
 
 #Program to read FASTQ file
 
-def readFASTQ(filename,mode):     #
+def readFASTQ(filename,mode):
     
     sequences = []
     qual_scores = []
