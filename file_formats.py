@@ -30,3 +30,17 @@ file = input()
 modee = input()
 seq,qual = readFASTQ(file,modee)
 seq[:5]
+
+
+def validate_megafile(f,m='r'):
+    
+    with open(f,m) as meg:
+        mega_content = meg.read()
+        
+        if mega_content.startswith("#Mega"):
+            return mega_content
+        else:
+            return "NOT A MEGA FILE"
+        
+res = validate_megafile('C:/Users/Srinath Ravichandran/Downloads/bioinfomethods1_labs_Lab3,4_sequences_prot_aligned.meg')
+print(res)
