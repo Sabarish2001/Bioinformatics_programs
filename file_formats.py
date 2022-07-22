@@ -42,5 +42,5 @@ def validate_megafile(f,m='r'):
         else:
             return "NOT A MEGA FILE"
         
-res = validate_megafile('C:/Users/Srinath Ravichandran/Downloads/bioinfomethods1_labs_Lab3,4_sequences_prot_aligned.meg')
+res = validate_megafile('bioinfomethods1_labs_Lab3,4_sequences_prot_aligned.meg')
 print(res)
