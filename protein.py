@@ -79,4 +79,4 @@ def convert_aa_to_mRNA(amino_sequence):
     return mRNA_seq
 
 res = convert_aa_to_mRNA("MVHTP")
-print("".join(res))
+print("".join(res) )
