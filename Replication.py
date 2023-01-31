@@ -117,3 +117,22 @@ def ApproximatePatternCount(Genome,pattern,d):
 
 
 print(FrequentWords("ATGCATCG",2))
+
+
+
+#Generating all the possible k-mer's of a given string and matching the k-mer(subset) of a given string and counting the number of time it appears in the given string
+# This is almost as same as the Pattern count function at the beginning except that it generates the all possible k-mers and count the matches and stores it in a dictionary
+
+my_string = input("Enter a string : ").upper()               
+kmer = int(input("Enter k-mer size : "))
+pattern = input("Enter a pattern :").upper()
+
+k_mer_dict = {}
+
+for every_base in range(0,len(my_string) -  len(pattern)):
+    k_mer_dict[my_string[every_base:every_base + kmer]] = 0
+for every_base in range(0,len(my_string) -  len(pattern)):
+    if my_string[every_base:every_base + len(pattern)] == pattern:
+        stroring_current_pattern = my_string[every_base:every_base + len(pattern)]
+        k_mer_dict[storing_current_pattern] += 1
+print(k_mer_dict)
